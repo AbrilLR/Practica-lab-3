@@ -68,7 +68,7 @@ print("SNR audio 2 antes de ser procesado: ", snr2)
 print("SNR audio 3 antes de ser procesado: ", snr3)
 ```
 ![image](https://github.com/user-attachments/assets/71e80ef0-0edd-4bec-9658-865ba977e884)
-Despues de realizado el calculo el SNR de cada audio dio como resultado lo mostrado en la imagen, estos resultados reflejan que las grabaciones poseen una calidad buena, ya que se encuentran dentro de un rango donde el ruido es bajo y no interfiere de manera significativa con la señal. Específicamente, el audio 2 muestra la mejor calidad, con un SNR cercano a los 40 dB, lo que indica una presencia mínima de ruido.
+Despues de realizado el calculo el SNR de cada audio dio como resultado lo mostrado en la imagen, estos resultados reflejan que las grabaciones poseen una calidad buena, ya que se encuentran dentro de un rango donde el ruido es bajo y no interfiere de manera significativa con la señal. Específicamente, el audio 2 muestra la mejor calidad, con un SNR cercano a los 40 dB, lo que indica poca presencia  de ruido.
 
 ## Análisis temporal y espectral
 Para la señal capturada por cada uno de los micrófonos se realizó una gráfica en función del tiempo para el análisis temporal, además se utilizó la transformada rápida de Fourier
