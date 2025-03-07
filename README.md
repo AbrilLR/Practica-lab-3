@@ -112,9 +112,9 @@ Para el aislamiento de la voz de interés, se estudiaron 2 métodos: el analisí
 
 
 ### Requisitos 
-Pyton 3.9.0 ó superior
-3 microfonos
-3 voces o fuentes de sonido
+* Pyton 3.9.0 ó superior
+* 3 microfonos
+* 3 voces o fuentes de sonido
 ### Librerias
 * FastICA
 * numpy
