@@ -23,17 +23,14 @@ plt.ylabel("Amplitud")
 plt.title("Señal en el Dominio del Tiempo")
 plt.grid()
 plt.show()
-
 print(f"Cantidad de muestras: " ,len(audio_voces))
 print(f"Frecuencia de muestreo: " , sr_voces , " Hz")
 
 #Fourier
 fxt = np.fft.fft(audio_voces)
 frecuencias = np.fft.fftfreq(len(audio_voces), d=1/sr_voces)
-
 limite_frecuencia = 1000
 mask = (frecuencias >= 0) & (frecuencias <= limite_frecuencia)
-
 plt.figure(figsize=(10, 5))
 
 # Magnitud de la FFT
@@ -45,4 +42,4 @@ plt.grid()
 plt.xlim(0, limite_frecuencia)  
 plt.show()
 ```
-![FFT](https://github.com/user-attachments/assets/99e80079-0f2a-4836-a531-08630d3283f8)
+
