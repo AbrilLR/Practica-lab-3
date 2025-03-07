@@ -6,7 +6,53 @@ Se utilizaron tres micrófonos distribuidos dentro de una sala, donde los tres i
 Además, se aplican técnicas de separación de fuentes, como el Análisis de Componentes Independientes (ICA), con el fin de aislar la señal de interés. Finalmente, se evalúa el SNR, comparando las señales aisladas con las originales.
 
 ## Captura de la señal 
+Para el experimento, se utilizaron tres fuentes de sonido correspondientes a tres voces diferentes. La captura de la señal fue realizada con los siguientes dispositivos: iPad, iPad pro y un iPhone.
+Adicionalmente a los 3 audios en los cuales se captaron a las tres fuentes de sonido, también se capturó el ruido ambiente del espacio en el cual se realizó la grabación con el fin de calcular la relación señal-ruido de las grabaciones de audio.
+Los participantes se distribuyeron en diferentes puntos de la sala, mientras que los dispositivos de grabación se ubicaron de la siguiente manera:
+Los dos las dos tablets se colocaron sobre la mesa central y el teléfono se situó en el piso. Con el fin de minimizar posibles interferencias durante la captura de las señales, se procuró que los micrófonos no apuntaran directamente hacia el participante más cercano o que apuntaran en la misma dirección, buscando disminuir la influencia predominante de una sola fuente sonora en cada micrófono o que dos micrófonos llegaran a captar la misma fuente
 
+![Distancias](https://github.com/user-attachments/assets/2b37c924-774b-48f6-b2b7-45ecbdc36f7c)
+
+
+
+En la imagen se muestra la disposición de cada uno los elementos y las distancias entre cada fuente de sonido y cada micrófono. 
+El ambiente en el cual se realizaron las grabaciones era un espacio cerrado, pero en el cual aun así se pueden apreciar interferencias de sonidos del ambiente las cuales provienen del exterior.
+
+## Calculo del SNR
+Para el calculo del SNR de las señales, en primer lugar se cargaron los audios mediante la librería Librosa, posteriormente se igualaron las duraciones de los audios con el fin evitar errores de cálculo o de código debido a la diferencia de datos entre ambas señales.
+Finalmente, se calculó la potencia de cada señal y se realizó la operación de la siguiente manera.
+
+```python
+# Cargar audios 
+audio_voces, sr = librosa.load(r'C:\Users\ACER\Documents\Antecedentes\Señales\Lab3\voces.wav', sr=None, mono=True)
+audio_ruido, sr = librosa.load(r'C:\Users\ACER\Documents\Antecedentes\Señales\Lab3\Nueva.wav', sr=None, mono=True)
+audio_voces2, sr = librosa.load(r'C:\Users\ACER\Documents\Antecedentes\Señales\Lab3\Universidad.wav', sr=None, mono=True)
+audio_voces3, sr = librosa.load(r'C:\Users\ACER\Documents\Antecedentes\Señales\Lab3\voz5.wav', sr=None, mono=True)
+
+# Igualar duración
+min_len = min(len(audio_voces2), len(audio_voces3), len(audio_voces), len(audio_ruido))
+audio1 = audio_voces[:min_len]
+ruido = audio_ruido[:min_len]
+audio2 = audio_voces2[:min_len]
+audio3 = audio_voces3[:min_len]
+
+# Calcular potencias
+potencia_voces = np.mean(audio1 ** 2)
+potencia_ruido = np.mean(ruido ** 2)
+potencia_voces2 = np.mean(audio2 ** 2)
+potencia_voces3 = np.mean(audio3 ** 2)
+
+# Calcular SNR
+snr = 10 * np.log10(potencia_voces / potencia_ruido)
+snr2 = 10 * np.log10(potencia_voces2 / potencia_ruido)
+snr3 = 10 * np.log10(potencia_voces3 / potencia_ruido)
+
+
+print("SNR audio 1 antes de ser procesado: ", snr)
+print("SNR audio 2 antes de ser procesado: ", snr2)
+print("SNR audio 3 antes de ser procesado: ", snr3)
+
+```
 ## Análisis temporal y espectral
 Para la señal capturada por cada uno de los micrófonos se realizó una gráfica en función del tiempo para el análisis temporal, además se utilizó la transformada rápida de Fourier
 (FFT) para obtener cada señal en función de la frecuencia, esta nos ayuda a identificar la intensidad de las diferentes frecuencias en la señal.
