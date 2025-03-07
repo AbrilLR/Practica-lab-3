@@ -42,8 +42,10 @@ plt.grid()
 plt.xlim(0, limite_frecuencia)  
 plt.show()
 ```
+En las graficas con respecto al tiempo podemos ver un pico de mayor amplitud aproximadamente a los 10 segundos el cual corresponde a un ruido proveniente del ambiente, en el resto del tiempo vemos una magnitud constante proveniente de las voces. En las gráficas de frecuencia podemos observar picos más altos en las correspondientes a las voces humanas, frecuencias más bajas para la voz masculina y frecueciaas mas altas para las voces femeninas
 
 ![FFT](https://github.com/user-attachments/assets/1cf3ed33-85b6-4c74-a5f9-1fa2c5502331)
+
 
 ## Métodos de aislamiento de señales
 Para el aislamiento de la voz de interés, se estudiaron 2 métodos: el analisís de componentes independientes (ICA) y el Beamforming
