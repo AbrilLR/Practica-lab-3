@@ -146,7 +146,7 @@ plt.show()
 ```
 ![Figure_1](https://github.com/user-attachments/assets/c1bb572a-6fae-4b16-bb74-aa3ecefd92c2)
 
-Podemos observar que la amplitud de las señales 1 y 2 se ve afectada por un ruido de tipo impulso, sin embargo al no ser algo repetitivo no representa algo relevante en el tratamiento de la señal
+Podemos observar que la amplitud de las señales 1 y 2 se ve afectada por un ruido de tipo impulso, sin embargo al no ser algo repetitivo no representa algo relevante en el tratamiento de la señal.
 
 ```python
 
@@ -176,7 +176,7 @@ print("SNR de la señal separada por ICA 3:", snr_ica3, "dB")
 El snr de las señales mejora ligeramente por lo que la potencia de las 3 es mayor a lo que era antes del ICA, sin embargo al escuchar el audio no hay un aislamiento claro, sino que se escuchan señales bastante saturadas, esto debido a que el método está diseñado para microfonos aislados, no un arreglo como el que se utilizó en este caso.
 
 ### Beamforming
-es un método que explota la información espacial de las fuentes y los micrófonos para enfocar la captación del sonido en una dirección específica. Es decir, usa la diferencia en los tiempos de llegada del sonido a cada micrófono para mejorar la captura de la fuente deseada, es un método util para un arreglo de microfonos con fuentes de sonido en posiciones medidas, por esto mismo se crea el eje de cooordenadas tomando el microfono del celular como la posición (0,0) y gracias a las fotos tomadas, se logra aproximar la posición de los otros elementos respecto a la refencia
+es un método que explota la información espacial de las fuentes y los micrófonos para enfocar la captación del sonido en una dirección específica. Es decir, usa la diferencia en los tiempos de llegada del sonido a cada micrófono para mejorar la captura de la fuente deseada, es un método util para un arreglo de microfonos con fuentes de sonido en posiciones medidas, por esto mismo se crea el eje de cooordenadas tomando el microfono del celular como la posición (0,0) y gracias a las fotos tomadas, se logra aproximar la posición de los otros elementos respecto a la refencia.
 ```python
 # Preparar las señales originales para beamforming
 sigs = [audio1, audio2, audio3]
@@ -260,7 +260,7 @@ print("SNR de la señal separada 3:", snr3, "dB \n")
 ```
 ![Captura de pantalla 2025-03-06 234522](https://github.com/user-attachments/assets/ce1e586d-ce22-4698-88c2-75baa5320590)
 
-El snr de todas las señales mejora considerablemente, reafirmando que el método por beamforming resulta dar mejores resultados para el experimento del coctel, sin embargo no es suficiente para escuchar una voz completamente aislada, sin embargo el audio "beamformed 3" es donde más se llega a notar que la voz de interes se oye de manera más clara a las otras, además estás otras voces se escuchan más bajas, como si fueran ruido de fondo. Estos resultados se pueden atribuir al hecho de que las distancias en el eje de coordenadas se encuentran bastante aproximadas debido al entorno en el que se realizó el arreglo de microfonos, además el hecho de que los diferentes microfonos sean de diferentes tipos de dispositivos tambien influye en el resultado del experimento
+El snr de todas las señales mejora considerablemente, reafirmando que el método por beamforming resulta dar mejores resultados para el experimento del coctel, sin embargo no es suficiente para escuchar una voz completamente aislada, sin embargo el audio "beamformed 3" es donde más se llega a notar que la voz de interes se oye de manera más clara a las otras, además estás otras voces se escuchan más bajas, como si fueran ruido de fondo. Estos resultados se pueden atribuir al hecho de que las distancias en el eje de coordenadas se encuentran bastante aproximadas debido al entorno en el que se realizó el arreglo de microfonos, además el hecho de que los diferentes microfonos sean de diferentes tipos de dispositivos tambien influye en el resultado del experimento.
 
 
 
@@ -268,7 +268,7 @@ El snr de todas las señales mejora considerablemente, reafirmando que el métod
 
 ### Requisitos 
 * Pyton 3.9.0 ó superior
-* 3 microfonos
+* 3 micrófonos
 * 3 voces o fuentes de sonido
 ### Librerias
 * FastICA
