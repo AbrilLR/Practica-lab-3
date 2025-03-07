@@ -43,3 +43,4 @@ plt.xlim(0, limite_frecuencia)
 plt.show()
 ```
 
+![FFT](https://github.com/user-attachments/assets/1cf3ed33-85b6-4c74-a5f9-1fa2c5502331)
