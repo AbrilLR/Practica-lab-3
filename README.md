@@ -44,3 +44,6 @@ plt.show()
 ```
 
 ![FFT](https://github.com/user-attachments/assets/1cf3ed33-85b6-4c74-a5f9-1fa2c5502331)
+
+## Métodos de aislamiento de señales
+Para el aislamiento de la voz de interés, se estudiaron 2 métodos: el analisís de componentes independientes (ICA) y el Beamforming
