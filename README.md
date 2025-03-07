@@ -8,8 +8,9 @@ Además, se aplican técnicas de separación de fuentes, como el Análisis de Co
 ## Captura de la señal 
 Para el experimento, se utilizaron tres fuentes de sonido correspondientes a tres voces diferentes. La captura de la señal fue realizada con los siguientes dispositivos: iPad, iPad pro y un iPhone.
 Adicionalmente a los 3 audios en los cuales se captaron a las tres fuentes de sonido, también se capturó el ruido ambiente del espacio en el cual se realizó la grabación con el fin de calcular la relación señal-ruido de las grabaciones de audio.
+
 Los participantes se distribuyeron en diferentes puntos de la sala, mientras que los dispositivos de grabación se ubicaron de la siguiente manera:
-Los dos las dos tablets se colocaron sobre la mesa central y el teléfono se situó en el piso. Con el fin de minimizar posibles interferencias durante la captura de las señales, se procuró que los micrófonos no apuntaran directamente hacia el participante más cercano o que apuntaran en la misma dirección, buscando disminuir la influencia predominante de una sola fuente sonora en cada micrófono o que dos micrófonos llegaran a captar la misma fuente
+Los dos las dos tablets se colocaron sobre la mesa central y el teléfono se situó en el piso. Con el fin de minimizar posibles interferencias durante la captura de las señales, se procuró que los micrófonos no apuntaran directamente hacia el participante más cercano o que apuntaran en la misma dirección, buscando disminuir la influencia predominante de una sola fuente sonora en cada micrófono o que dos micrófonos llegaran a captar la misma fuente.
 
 ![Distancias](https://github.com/user-attachments/assets/2b37c924-774b-48f6-b2b7-45ecbdc36f7c)
 
@@ -105,3 +106,18 @@ En las graficas con respecto al tiempo podemos ver un pico de mayor amplitud apr
 
 ## Métodos de aislamiento de señales
 Para el aislamiento de la voz de interés, se estudiaron 2 métodos: el analisís de componentes independientes (ICA) y el Beamforming
+
+
+
+
+
+### Requisitos 
+Pyton 3.9.0 ó superior
+3 microfonos
+3 voces o fuentes de sonido
+### Librerias
+* FastICA
+* numpy
+* matplotlib
+* scipy.stats
+* librosa
