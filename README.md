@@ -18,6 +18,12 @@ Los dos las dos tablets se colocaron sobre la mesa central y el teléfono se sit
 En la imagen se muestra la disposición de cada uno los elementos y las distancias entre cada fuente de sonido y cada micrófono. 
 El ambiente en el cual se realizaron las grabaciones era un espacio cerrado, pero en el cual aun así se pueden apreciar interferencias de sonidos del ambiente las cuales provienen del exterior.
 
+### Digitalización 
+
+Se utilizó una frecuencia de muestreo de 44,100 Hz. Esta frecuencia cumple con el criterio de Nyquist para señales de audio, permitiendo capturar adecuadamente señales con componentes de frecuencia de hasta 22,050 Hz, lo cual es suficiente para abarcar el rango audible por el ser humano el cual va de 20 a 20k Hz aproximadamente.
+
+ ![image](https://github.com/user-attachments/assets/042ef023-7310-4185-9825-0a37272b0c02)
+
 
 
 ## Calculo del SNR
