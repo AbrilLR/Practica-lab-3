@@ -6,3 +6,43 @@ Se utilizaron tres micrófonos distribuidos dentro de una sala, donde los tres i
 Además, se aplican técnicas de separación de fuentes, como el Análisis de Componentes Independientes (ICA), con el fin de aislar la señal de interés. Finalmente, se evalúa el SNR, comparando las señales aisladas con las originales.
 
 ## Captura de la señal 
+
+## Análisis temporal y espectral
+Para la señal capturada por cada uno de los micrófonos se realizó una gráfica en función del tiempo para el análisis temporal, además se utilizó la transformada rápida de Fourier
+(FFT) para obtener cada señal en función de la frecuencia, esta nos ayuda a identificar la intensidad de las diferentes frecuencias en la señal.
+
+```python
+#Audio 1
+duracion = len(audio_voces) / sr_voces
+print(f"Duración de la señal 1: ", duracion ," segundos")
+tiempo = np.linspace(0, duracion, num=len(audio_voces))
+plt.figure(figsize=(12, 6))
+plt.plot(tiempo, audio_voces, color="b", alpha=0.7)
+plt.xlabel("Tiempo (s)")
+plt.ylabel("Amplitud")
+plt.title("Señal en el Dominio del Tiempo")
+plt.grid()
+plt.show()
+
+print(f"Cantidad de muestras: " ,len(audio_voces))
+print(f"Frecuencia de muestreo: " , sr_voces , " Hz")
+
+#Fourier
+fxt = np.fft.fft(audio_voces)
+frecuencias = np.fft.fftfreq(len(audio_voces), d=1/sr_voces)
+
+limite_frecuencia = 1000
+mask = (frecuencias >= 0) & (frecuencias <= limite_frecuencia)
+
+plt.figure(figsize=(10, 5))
+
+# Magnitud de la FFT
+plt.plot(frecuencias[mask], np.abs(fxt[mask]))
+plt.title("FFT")
+plt.ylabel("Magnitud")
+plt.xlabel("Frecuencia (Hz)")
+plt.grid()
+plt.xlim(0, limite_frecuencia)  
+plt.show()
+```
+![FFT](https://github.com/user-attachments/assets/99e80079-0f2a-4836-a531-08630d3283f8)
