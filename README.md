@@ -14,12 +14,20 @@ Los dos las dos tablets se colocaron sobre la mesa central y el teléfono se sit
 ![Distancias](https://github.com/user-attachments/assets/2b37c924-774b-48f6-b2b7-45ecbdc36f7c)
 
 
-
 En la imagen se muestra la disposición de cada uno los elementos y las distancias entre cada fuente de sonido y cada micrófono. 
 El ambiente en el cual se realizaron las grabaciones era un espacio cerrado, pero en el cual aun así se pueden apreciar interferencias de sonidos del ambiente las cuales provienen del exterior.
 
+
+
 ## Calculo del SNR
-Para el calculo del SNR de las señales, en primer lugar se cargaron los audios mediante la librería Librosa, posteriormente se igualaron las duraciones de los audios con el fin evitar errores de cálculo o de código debido a la diferencia de datos entre ambas señales.
+Para el calculo del SNR de las señales, en primer lugar se cargaron los audios mediante la librería Librosa, las señales tambien fueron graficadas en el dominio del tiempo con el fin de  visualizar cómo varía la amplitud de cada una a lo largo del tiempo.
+
+
+![vocesgraf](https://github.com/user-attachments/assets/7177d7be-7402-4af7-813e-45962e5f5f78)
+
+
+
+Posteriormente se igualaron las duraciones de los audios con el fin evitar errores de cálculo o de código debido a la diferencia de datos entre ambas señales.
 Finalmente, se calculó la potencia de cada señal y se realizó la operación de la siguiente manera.
 
 ```python
@@ -51,8 +59,10 @@ snr3 = 10 * np.log10(potencia_voces3 / potencia_ruido)
 print("SNR audio 1 antes de ser procesado: ", snr)
 print("SNR audio 2 antes de ser procesado: ", snr2)
 print("SNR audio 3 antes de ser procesado: ", snr3)
-
 ```
+![image](https://github.com/user-attachments/assets/71e80ef0-0edd-4bec-9658-865ba977e884)
+Despues de realizado el calculo el SNR de cada audio dio como resultado lo mostrado en la imagen, estos resultados reflejan que las grabaciones poseen una calidad buena, ya que se encuentran dentro de un rango donde el ruido es bajo y no interfiere de manera significativa con la señal. Específicamente, el audio 2 muestra la mejor calidad, con un SNR cercano a los 40 dB, lo que indica una presencia mínima de ruido.
+
 ## Análisis temporal y espectral
 Para la señal capturada por cada uno de los micrófonos se realizó una gráfica en función del tiempo para el análisis temporal, además se utilizó la transformada rápida de Fourier
 (FFT) para obtener cada señal en función de la frecuencia, esta nos ayuda a identificar la intensidad de las diferentes frecuencias en la señal.
